@@ -74,7 +74,7 @@ public class AppPanel extends JPanel {
             label.setFont(new Font("Ubuntu Bold Italic", Font.PLAIN, 20));
             label.setForeground(Color.WHITE);
         }
-        fields = new ArrayList<JTextField>();
+        fields = new ArrayList<>();
         fields.add(hexPrivateKey);
         fields.add(WIFPrivateKey);
         fields.add(publicKey);
