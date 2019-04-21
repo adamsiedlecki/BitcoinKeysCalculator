@@ -29,7 +29,16 @@ public class Conf {
     @Bean
     public BufferedImage getBitcoinLogo() {
         try {
-            return ImageIO.read(new File("src\\main\\resources\\btclogo.bmp"));
+            File logo = null;
+            String osName = System.getProperty("os.name").toLowerCase();
+            if (osName.indexOf("win") >= 0) {
+                logo = new File("src\\main\\resources\\btclogo.bmp");
+            } else if (osName.indexOf("nux") >= 0) {
+                logo = new File("src/main/resources/btclogo.bmp");
+
+            }
+
+            return ImageIO.read(logo);   //
         } catch (IOException e) {
             e.printStackTrace();
         }
